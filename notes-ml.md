@@ -43,3 +43,16 @@ remainder='drop')
 X_train = preprocess_pipeline.fit_transform(train_data)
 X_train = pd.DataFrame(X_train, columns=preprocess_pipeline.get_feature_names_out(), index= train_data.index)
 ```
+### Get all files located in a dir
+```
+ham_filenames = [f for f in sorted(ham_dir.iterdir()) if len(f.name) > 20]
+```
+### Email parser 
+```
+import email
+import email.policy
+
+def load_email(filepath):
+    with open(filepath, "rb") as f:
+        return email.parser.BytesParser(policy=email.policy.default).parse(f)
+```
