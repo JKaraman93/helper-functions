@@ -56,3 +56,8 @@ def load_email(filepath):
     with open(filepath, "rb") as f:
         return email.parser.BytesParser(policy=email.policy.default).parse(f)
 ```
+### various packages
+```
+from sklearn.metrics import confuion_matrix, ConfusionMatrixDisplay, precision_recall_curve, precision_score, recall_score, f1_score, roc_curve, roc_auc_score
+from sklearn.model_selection import cross_val_score, cross_val_predict
+```
