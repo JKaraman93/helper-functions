@@ -61,3 +61,37 @@ def load_email(filepath):
 from sklearn.metrics import confuion_matrix, ConfusionMatrixDisplay, precision_recall_curve, precision_score, recall_score, f1_score, roc_curve, roc_auc_score
 from sklearn.model_selection import cross_val_score, cross_val_predict
 ```
+### Countour plot
+```
+xc = np.linspace(0,7, 500)
+yc= np.linspace(0, 3.5, 200)
+
+x0, x1 = np.meshgrid(xc, yc)
+X_new = np.c_[x0.ravel(), x1.ravel()]
+
+y_proba = softmax_reg.predict_proba(X_new)
+y_predict = softmax_reg.predict(X_new)
+
+zz0 = y_proba[:, 0].reshape(x0.shape)
+zz1 = y_proba[:, 1].reshape(x0.shape)
+zz2 = y_proba[:, 2].reshape(x0.shape)
+zz = y_predict.reshape(x0.shape)
+
+plt.contourf(x0, x1, zz, cmap=custom_cmap)
+contour0 = plt.contour(x0, x1, zz0, cmap="hot",)
+#contour1 = plt.contour(x0, x1, zz1, cmap="hot",)
+#contour2 = plt.contour(x0, x1, zz2, cmap="hot",)
+
+plt.clabel(contour0, inline =1)
+
+plt.plot(X[y==2,0],X[y==2,1], 'g^', label='virginica')
+plt.plot(X[y==1,0],X[y==1,1], 'bs', label='versicolor')
+plt.plot(X[y==0,0],X[y==0,1], 'yo', label='setosa')
+
+plt.ylabel('Petal width')
+plt.xlabel('Petal length')
+plt.axis([0,7,0,3.5])
+plt.legend(loc='best')
+plt.grid()
+plt.show()
+```
