@@ -52,3 +52,9 @@ It is almost always preferable to have at least a little bit of regularization, 
 plain Linear Regression. Ridge is a good default, but if you suspect that only a few features are useful, you
 should prefer Lasso or Elastic Net because they tend to reduce the useless features’ weights down to zero.
 In general, Elastic Net is preferred over Lasso because Lasso may behave erratically **when the number of features is greater than the number of training instances or when several features are strongly correlated**.
+
+#### Logistic Regression
+
+A Logistic Regression model computes a weighted sum of the input features (plus a bias term), but instead of outputting the result directly
+like the Linear Regression model does, it outputs the logistic of this result. 
+
