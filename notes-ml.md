@@ -95,3 +95,14 @@ plt.legend(loc='best')
 plt.grid()
 plt.show()
 ```
+### Logistic Regression (from scratch)
+```
+for epoch in range(n_epochs):
+    logits = X_train @ Theta
+    Y_proba = softmax(logits)
+    if epoch % 1000 == 0:
+        Y_proba_valid = softmax(X_val @ Theta)
+    error = Y_proba - Y_train_one_hot
+    gradients = 1 / m * X_train.T @ error
+    Theta = Theta - eta * gradients 
+```
