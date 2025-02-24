@@ -106,3 +106,19 @@ for epoch in range(n_epochs):
     gradients = 1 / m * X_train.T @ error
     Theta = Theta - eta * gradients 
 ```
+### SVM Classification plot
+```
+  w = svm_clf.coef_[0]
+  b = svm_clf.intercept_[0]
+
+  # At the decision boundary, w0*x0 + w1*x1 + b = 0
+  # => x1 = -w0/w1 * x0 - b/w1
+  x0 = np.linspace(xmin, xmax, 200)
+  decision_boundary = -w[0] / w[1] * x0 - b / w[1]
+
+  margin = 1/w[1]
+  gutter_up = decision_boundary + margin
+  gutter_down = decision_boundary - margin
+  svs = svm_clf.support_vectors_
+
+```
