@@ -121,10 +121,16 @@ for epoch in range(n_epochs):
   gutter_down = decision_boundary - margin
   svs = svm_clf.support_vectors_
 
-  X_new = [[5.5, 1.7], [5.0, 1.5]]
-  svm_clf.predict(X_new) 
-  svm_clf.decision_function(X_new) #These measure the signed distance between each
+  xc = np.linspace(0,5.5, 500)
+  yc= np.linspace(0, 3.5, 200)  
+  x0, x1 = np.meshgrid(xc, yc)
+  X_new = np.c_[x0.ravel(), x1.ravel()]  
+  y_predict = svm_clf.predict(X_new)
+  zz = y_predict.reshape(x0.shape)
+  plt.contourf(x0, x1, zz, cmap='hot')
+  zz0 = svm_clf.decision_function(X_new).reshape(x0.shape) #These measure the signed distance between each
   #instance and the decision boundary:
 
-
+  contour0 = plt.contour(x0, x1, zz0, cmap="hot",levels=10)
+  plt.clabel(contour0, inline =1)
 ```
