@@ -121,4 +121,10 @@ for epoch in range(n_epochs):
   gutter_down = decision_boundary - margin
   svs = svm_clf.support_vectors_
 
+  X_new = [[5.5, 1.7], [5.0, 1.5]]
+  svm_clf.predict(X_new) 
+  svm_clf.decision_function(X_new) #These measure the signed distance between each
+  #instance and the decision boundary:
+
+
 ```
