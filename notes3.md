@@ -2,8 +2,8 @@
 > Remember that LinearSVC uses **loss="squared_hinge"** by default, so if we want all 3 models to produce similar results, we need to set loss="hinge".
 > Also, the SVC class uses an RBF kernel by default, so we need to set kernel="linear" to get similar results as the other two models.
 > Lastly, the SGDClassifier class does not have a C hyperparameter, but it has another regularization hyperparameter called **alpha**, so we can tweak it to get similar results as the other two models.
-> 
-> ### Decision Trees
+ 
+ ### Decision Trees
 > They don't require feature scaling or centering at all
 >
 > A binary Decision Tree (one that makes only binary decisions, as is the case with all trees in Scikit-Learn) will end up more or less well balanced at the end of training, with one leaf per training instance if it is trained without restrictions.
