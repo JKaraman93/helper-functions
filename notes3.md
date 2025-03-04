@@ -12,3 +12,8 @@
 
 ### Random Forest
 > Ensemble methods work best when the predictors are as independent from one another as possible. One way to get diverse classifiers is to train them using very different algorithms. This increases the chance that they will make very different types of errors, improving the ensemble’s accuracy.
+>
+> Bootstrapping introduces a bit more diversity in the subsets that each predictor is trained
+on, so bagging ends up with a slightly higher bias than pasting; but the extra diversity
+also means that the predictors end up being less correlated, so the ensemble’s variance isreduced. Overall, bagging often results in better models, which explains why it is
+generally preferred
