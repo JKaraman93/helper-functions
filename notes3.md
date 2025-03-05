@@ -17,3 +17,5 @@
 on, so bagging ends up with a slightly higher bias than pasting; but the extra diversity
 also means that the predictors end up being less correlated, so the ensemble’s variance isreduced. Overall, bagging often results in better models, which explains why it is
 generally preferred
+>
+> 
