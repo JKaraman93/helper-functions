@@ -24,3 +24,20 @@ classifier (such as a Decision Tree) and uses it to make predictions on the trai
 The algorithm then increases the relative weight of misclassified training instances.
 Then it trains a second classifier, using the updated weights, and again makes
 predictions on the training set, updates the instance weights
+
+### Gradient Boosting 
+> Just like AdaBoost,
+Gradient Boosting works by sequentially adding predictors to an ensemble, each one
+correcting its predecessor. However, instead of tweaking the instance weights at every
+iteration like AdaBoost does, this method tries to fit the new predictor to the **residual
+errors** made by the previous predictor.
+```
+tree_reg1 = DecisionTreeRegressor(max_depth=2, random_state=42)
+tree_reg1.fit(X, y)
+y2 = y - tree_reg1.predict(X)
+tree_reg2 = DecisionTreeRegressor(max_depth=2, random_state=43)
+tree_reg2.fit(X, y2)
+## Prediction 
+X_new = np.array([[-0.4], [0.], [0.5]])
+sum(tree.predict(X_new) for tree in (tree_reg1, tree_reg2, tree_reg3))
+```
