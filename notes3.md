@@ -17,5 +17,10 @@
 on, so bagging ends up with a slightly higher bias than pasting; but the extra diversity
 also means that the predictors end up being less correlated, so the ensemble’s variance isreduced. Overall, bagging often results in better models, which explains why it is
 generally preferred
->
-> 
+
+### AdaBoost 
+> The algorithm first trains a base
+classifier (such as a Decision Tree) and uses it to make predictions on the training set.
+The algorithm then increases the relative weight of misclassified training instances.
+Then it trains a second classifier, using the updated weights, and again makes
+predictions on the training set, updates the instance weights
