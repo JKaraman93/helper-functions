@@ -41,3 +41,15 @@ tree_reg2.fit(X, y2)
 X_new = np.array([[-0.4], [0.], [0.5]])
 sum(tree.predict(X_new) for tree in (tree_reg1, tree_reg2, tree_reg3))
 ```
+
+> The **learning_rate** hyperparameter scales the contribution of each tree. If you set it
+to a low value, such as 0.05, you will need more trees in the ensemble to fit the
+training set, but the predictions will usually generalize better.
+> 
+> if you set the **n_iter_no_change** hyperparameter to an integer value, say 10, then theGradientBoostingRegressor will automatically stop adding more trees during
+training if it sees that the last 10 trees didn’t help. This is simply *early stopping*
+> 
+> GradientBoostingRegressor class also supports a **subsample**
+hyperparameter, which specifies the fraction of training instances to be used for training
+each tree. For example, if subsample=0.25, then each tree is trained on 25% of the
+training instances, selected randomly (Stochastic Gradient Boosting).
