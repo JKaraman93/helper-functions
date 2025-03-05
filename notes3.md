@@ -53,3 +53,12 @@ training if it sees that the last 10 trees didn’t help. This is simply *early 
 hyperparameter, which specifies the fraction of training instances to be used for training
 each tree. For example, if subsample=0.25, then each tree is trained on 25% of the
 training instances, selected randomly (Stochastic Gradient Boosting).
+
+### Additional Algorithms
+> Several other optimized implementations of Gradient Boosting are available in the Python ML
+ecosystem, in particular: XGBoost, CatBoost, and LightGBM. These libraries have been around for
+several years, they are all specialized for Gradient Boosting, their APIs are very similar to Scikit-
+Learn’s, and they provide many additional features, including GPU-acceleration: you should definitely
+check them out! Moreover, there’s a newcomer in the forest arena: TensorFlow Random Forests was
+released in 2021, and it provides optimized implementations of many Random Forest algorithms: plain
+Random Forests, Extra Trees, GBRT, and several more.
