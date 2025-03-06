@@ -62,3 +62,9 @@ Learn’s, and they provide many additional features, including GPU-acceleration
 check them out! Moreover, there’s a newcomer in the forest arena: TensorFlow Random Forests was
 released in 2021, and it provides optimized implementations of many Random Forest algorithms: plain
 Random Forests, Extra Trees, GBRT, and several more.
+
+### Histogram-Based Gradient Boosting
+> HGB can train hundreds of times faster than regular
+GBRT on large datasets. However, binning causes a precision loss, which acts as a
+regularizer: depending on the dataset, this may help reduce overfitting, or it may cause
+underfitting. 
