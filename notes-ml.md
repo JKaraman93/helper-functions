@@ -134,8 +134,4 @@ for epoch in range(n_epochs):
   contour0 = plt.contour(x0, x1, zz0, cmap="hot",levels=10)
   plt.clabel(contour0, inline =1)
 ```
-### Histogram-Based Gradient Boosting
-> HGB can train hundreds of times faster than regular
-GBRT on large datasets. However, binning causes a precision loss, which acts as a
-regularizer: depending on the dataset, this may help reduce overfitting, or it may cause
-underfitting. 
+
