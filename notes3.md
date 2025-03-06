@@ -67,4 +67,16 @@ Random Forests, Extra Trees, GBRT, and several more.
 > HGB can train hundreds of times faster than regular
 GBRT on large datasets. However, binning causes a precision loss, which acts as a
 regularizer: depending on the dataset, this may help reduce overfitting, or it may cause
-underfitting. 
+underfitting.
+
+### Stacking 
+
+> Each of the bottom three
+predictors predicts a different value (3.1, 2.7, and 2.9), and then the final predictor
+(called a blender, or a meta learner) takes these predictions as inputs and makes the
+final prediction (3.0).
+>
+> To train the blender, you first need to build the blending training set: you can use
+cross_val_predict() on every predictor in the ensemble to get out-of-sample
+predictions for each instance in the original training set (Figure 7-12). These can beused as the input features to train the blender, and the targets can be simply be copied
+from the original training set.
