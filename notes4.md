@@ -22,9 +22,6 @@ a lower-dimensional space using a random linear projection. This may
 sound crazy, but it turns out that such a random projection is actually very
 likely to preserve distances fairly well.
 >
-> Notice that the equation does not use n, it only
-relies on m and ε.
-> 
-> m = #instances
-> 
-> ε = error tolerance
+> It only relies on **m** and **ε** and not on n | n = #features m = #instances,  ε = error tolerance
+>
+> it’s usually preferable to use **SparseRandomProjection** transformer instead of the first one, especially for **large or sparse datasets**.
