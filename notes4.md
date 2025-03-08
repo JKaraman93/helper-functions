@@ -25,3 +25,9 @@ likely to preserve distances fairly well.
 > It only relies on **m** and **ε** and not on n | n = #features m = #instances,  ε = error tolerance
 >
 > it’s usually preferable to use **SparseRandomProjection** transformer instead of the first one, especially for **large or sparse datasets**.
+>
+
+### Locally Linear Embedding (LLE) - (Manifold Learning)
+> It works by first measuring how each training instance linearly relates to its
+nearest neighbors, and then looking for a low-dimensional representation of
+the training set where these local relationships are best preserved.
