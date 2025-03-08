@@ -134,4 +134,29 @@ for epoch in range(n_epochs):
   contour0 = plt.contour(x0, x1, zz0, cmap="hot",levels=10)
   plt.clabel(contour0, inline =1)
 ```
+### Incremental PCA 
+```
+from sklearn.decomposition import IncrementalPCA
+n_batches = 100
+inc_pca = IncrementalPCA(n_components=154)
+for X_batch in np.array_split(X_train, n_batches):
+inc_pca.partial_fit(X_batch)
+X_reduced = inc_pca.transform(X_train)
+
+## OR ##
+
+filename = "my_mnist.mmap"
+X_mmap = np.memmap(filename, dtype='float32', mode='write',
+shape=X_train.shape)
+X_mmap[:] = X_train # could be a loop instead, saving the data
+chunk by chunk
+X_mmap.flush()
+
+X_mmap = np.memmap(filename, dtype="float32",
+mode="readonly").reshape(-1, 784)
+batch_size = X_mmap.shape[0] // n_batches
+inc_pca = IncrementalPCA(n_components=154, batch_size=batch_size)
+inc_pca.fit(X_mmap)
+
+```
 
