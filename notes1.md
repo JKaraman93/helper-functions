@@ -61,3 +61,8 @@ for idx, ax in enumerate(axes.flat):
 plt.subplots_adjust(wspace=0,hspace=0)
 plt.show()
 ```
+### Execution Time Measurement
+```
+%timeit gaussian_rnd_proj.transform(X)
+```
+
