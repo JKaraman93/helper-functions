@@ -26,8 +26,27 @@ likely to preserve distances fairly well.
 >
 > it’s usually preferable to use **SparseRandomProjection** transformer instead of the first one, especially for **large or sparse datasets**.
 >
+> LLE is quite different from the projection techniques, and
+it’s significantly more complex, but it can also perform much better,
+especially if the data is non-linear.
 
 ### Locally Linear Embedding (LLE) - (Manifold Learning)
 > It works by first measuring how each training instance linearly relates to its
 nearest neighbors, and then looking for a low-dimensional representation of
 the training set where these local relationships are best preserved.
+>
+> LLE is quite different from the projection techniques, and
+it’s significantly more complex, but it can also perform much better,
+especially if the data is non-linear.
+>
+> More specifically, it
+tries to find the weights wi,j such that
+> $\hat{W} = argmin_m \sum_{i=1}^{m}(x^{(i))}$
+> is as small as possible, assuming wi,j = 0 if x(j) is not one of
+the k nearest neighbors of x(i).
+
+The second
+step is to map the training instances into a d-dimensional space (where d <
+n) while preserving these local relationships as much as possible. If z(i) is
+the image of x(i) in this d-dimensional space, then we want the squared
+distance between z(i) and ∑ ŵ z to be as small as possible
