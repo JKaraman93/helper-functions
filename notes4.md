@@ -12,3 +12,12 @@ the training set has, the greater the risk of **overfitting** it.
 > It assumes that the dataset is centered around the origin.
 
 > $X_{d-proj}=XW_d$ where $W_d$, defined as the matrix containing the first $d$ columns of $V$ (PCA ccomponents matrix)
+
+> $X_{recovered}=X_{d-proj}W_d^T$  PCA for Compression
+
+### Random Projection
+
+> Random Projection algorithm projects the data to
+a lower-dimensional space using a random linear projection. This may
+sound crazy, but it turns out that such a random projection is actually very
+likely to preserve distances fairly well.
