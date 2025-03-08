@@ -21,3 +21,10 @@ the training set has, the greater the risk of **overfitting** it.
 a lower-dimensional space using a random linear projection. This may
 sound crazy, but it turns out that such a random projection is actually very
 likely to preserve distances fairly well.
+>
+> Notice that the equation does not use n, it only
+relies on m and ε.
+> 
+> m = #instances
+> 
+> ε = error tolerance
