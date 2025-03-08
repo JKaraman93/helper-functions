@@ -13,7 +13,7 @@ the training set has, the greater the risk of **overfitting** it.
 
 > $X_{d-proj}=XW_d$ where $W_d$, defined as the matrix containing the first $d$ columns of $V$ (PCA ccomponents matrix)
 
-> $X_{recovered}=X_{d-proj}W_d^T$  PCA for Compression
+> $X_{recovered}=X_{d-proj}W_d^T$ - PCA for Compression
 
 ### Random Projection
 
