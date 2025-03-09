@@ -28,9 +28,6 @@ likely to preserve distances fairly well.
 >
 > it’s usually preferable to use **SparseRandomProjection** transformer instead of the first one, especially for **large or sparse datasets**.
 >
-> LLE is quite different from the projection techniques, and
-it’s significantly more complex, but it can also perform much better,
-especially if the data is non-linear.
 
 ### Locally Linear Embedding (LLE) - (Manifold Learning)
 > It works by first measuring how each training instance linearly relates to its
