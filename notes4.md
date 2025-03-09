@@ -40,13 +40,12 @@ it’s significantly more complex, but it can also perform much better,
 especially if the data is non-linear.
 >
 > More specifically, it
-tries to find the weights wi,j such that
-> $\hat{W} = argmin_m \sum_{i=1}^{m}(x^{(i))}$
-> is as small as possible, assuming wi,j = 0 if x(j) is not one of
-the k nearest neighbors of x(i).
+tries to find the weights $w_{i,j}$ such that
+> $\hat{W} = argmin_m \sum_{i=1}^{m}(x^{(i)}-\sum^m_{j=1}w_{i,j}x^{(j)}$
+> is as small as possible, assuming $w_{i,j}=0$  if $x^{(j)}$ is not one of
+the k nearest neighbors of $x^{(i)}$.
 
-The second
-step is to map the training instances into a d-dimensional space (where d <
-n) while preserving these local relationships as much as possible. If z(i) is
-the image of x(i) in this d-dimensional space, then we want the squared
-distance between z(i) and ∑ ŵ z to be as small as possible
+> The second step is to map the training instances into a d-dimensional space (where d <
+n) while preserving these local relationships as much as possible. If $z^{(i)}$ is
+the image of $x^{(i)}$ in this d-dimensional space, then we want the squared
+distance between $z^{(i)}$. and $\hat{Z} = argmin_z \sum_{i=1}^{m}(z^{(i)}-\sum^m_{j=1}w_{i,j}z^{(j)}$ to be as small as possible
