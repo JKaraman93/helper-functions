@@ -44,8 +44,14 @@ tries to find the weights $w_{i,j}$ such that
 > $\hat{W} = argmin_m \sum_{i=1}^{m}(x^{(i)}-\sum^m_{j=1}w_{i,j}x^{(j)}$
 > is as small as possible, assuming $w_{i,j}=0$  if $x^{(j)}$ is not one of
 the k nearest neighbors of $x^{(i)}$.
-
+>
 > The second step is to map the training instances into a d-dimensional space (where d <
 n) while preserving these local relationships as much as possible. If $z^{(i)}$ is
 the image of $x^{(i)}$ in this d-dimensional space, then we want the squared
 distance between $z^{(i)}$. and $\hat{Z} = argmin_z \sum_{i=1}^{m}(z^{(i)}-\sum^m_{j=1}w_{i,j}z^{(j)}$ to be as small as possible
+
+### Linear Discriminant Analysis (LDA) 
+> It is a **linear classification algorithm**, and during training it learns the most discriminative axes
+between the classes. These axes can then be used to define a hyperplane
+onto which to project the data. The benefit of this approach is that theprojection will keep classes as far apart as possible, so LDA is a good
+technique to reduce dimensionality before running another classification algorithm (unless LDA is sufficient).
