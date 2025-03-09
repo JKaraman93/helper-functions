@@ -54,3 +54,6 @@ distance between $z^{(i)}$. and $\hat{Z} = argmin_z \sum_{i=1}^{m}(z^{(i)}-\sum^
 between the classes. These axes can then be used to define a hyperplane
 onto which to project the data. The benefit of this approach is that theprojection will keep classes as far apart as possible, so LDA is a good
 technique to reduce dimensionality before running another classification algorithm (unless LDA is sufficient).
+
+> [!IMPORTANT]
+> It can absolutely make sense to chain two different dimensionality reduction algorithms. A common example is using PCA or Random Projection to quickly get rid of a large number of useless dimensions, then applying another much slower dimensionality reduction algorithm, such as LLE. This two-step approach will likely yield roughly the same performance as using LLE only, but in a fraction of the time.
