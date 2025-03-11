@@ -21,6 +21,13 @@ shapes.
 >
 >  It is important to **scale** the input features before you run K-Means, or the clusters may
 be very stretched and K-Means will perform poorly.
+```
+  ### KMeans SEGMENTATION  ###
+  kmeans = KMeans(n_clusters=c, n_init=10, random_state=42).fit(X)
+  segmented_img = kmeans.cluster_centers_[kmeans.labels_]
+  segmented_img = segmented_img.reshape(image.shape)
+  plt.imshow(segmented_img/255.)
+```
 
 ### Anomaly detection
 
