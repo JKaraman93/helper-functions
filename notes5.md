@@ -13,6 +13,11 @@ Any instance that has a low affinity to all the clusters is likely to be an anom
 
 #### For semi-supervised learning
 If you only have a few labels, you could perform clustering and propagate
+
+### Kmeans
+> Moreover, K-Means does not behave very well when the clusters have varying sizes, different densities, or nonspherical
+shapes.
+
 ### Anomaly detection
 
 ### Density estimation
