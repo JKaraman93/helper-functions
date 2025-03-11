@@ -15,8 +15,12 @@ Any instance that has a low affinity to all the clusters is likely to be an anom
 If you only have a few labels, you could perform clustering and propagate
 
 ### Kmeans
+> [!IMPORTANT]
 > Moreover, K-Means does not behave very well when the clusters have varying sizes, different densities, or nonspherical
 shapes.
+>
+>  It is important to **scale** the input features before you run K-Means, or the clusters may
+be very stretched and K-Means will perform poorly.
 
 ### Anomaly detection
 
