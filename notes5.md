@@ -18,6 +18,15 @@ If you only have a few labels, you could perform clustering and propagate
 3) Propagate the labels to all the other instances
 4) (Optional) Ignore the 1% instances that are farthest from their cluster center (Outliers)
 
+>[!NOTE]
+> <ins> Active learning - Uncertainty sampling </ins>
+> 1. The model is trained on the labeled instances gathered so far, and this model is used to make predictions on all the unlabeled
+instances.
+> 2. The instances for which the model is most uncertain (i.e., when its
+estimated probability is lowest) are given to the expert for labeling.
+> 3. You iterate this process until the performance improvement stops
+being worth the labeling effort.
+
 ### Kmeans
 > [!IMPORTANT]
 > Moreover, K-Means does not behave very well when the clusters have varying sizes, different densities, or nonspherical
