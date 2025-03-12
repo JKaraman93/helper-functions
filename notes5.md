@@ -41,6 +41,14 @@ be very stretched and K-Means will perform poorly.
   segmented_img = segmented_img.reshape(image.shape)
   plt.imshow(segmented_img/255.)
 ```
+### DBSCAN
+If the density varies significantly across the clusters, or if there’s no sufficiently low-density region around some clusters, 
+DBSCAN can struggle to capture all the clusters properly. Moreover, it does not scale well to large datasets.
+
+### Agglomerative clustering
+It can scale nicely to large numbers of instances if you provide a **connectivity matrix**, which is a
+sparse m × m matrix that indicates which pairs of instances are neighbors (e.g., returned by
+sklearn.neighbors.kneighbors_graph()). Without a connectivity matrix, the algorithm **does not scale well to large datasets**
 
 ### Anomaly detection
 
