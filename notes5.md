@@ -13,6 +13,10 @@ Any instance that has a low affinity to all the clusters is likely to be an anom
 
 #### For semi-supervised learning
 If you only have a few labels, you could perform clustering and propagate
+1) Apply clustering to the full training set
+2) Label the representative points of each cluster
+3) Propagate the labels to all the other instances
+4) (Optional) Ignore the 1% instances that are farthest from their cluster center (Outliers)
 
 ### Kmeans
 > [!IMPORTANT]
