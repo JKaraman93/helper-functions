@@ -50,6 +50,14 @@ It can scale nicely to large numbers of instances if you provide a **connectivit
 sparse m × m matrix that indicates which pairs of instances are neighbors (e.g., returned by
 sklearn.neighbors.kneighbors_graph()). Without a connectivity matrix, the algorithm **does not scale well to large datasets**
 
+### BIRCH
+was designed specifically for very large datasets,and it can be faster than batch K-Means, without having to store all the instances in the
+tree: this approach allows it to use limited memory, while handling huge datasets.
+
+### Spectral clustering 
+This algorithm takes a similarity matrix between the instances and creates a low-dimensional embedding from it (i.e., it reduces the
+matrix’s dimensionality), then it uses another clustering algorithm in this low-dimensional space
+
 ### Anomaly detection
 
 ### Density estimation
