@@ -64,6 +64,12 @@ parameters randomly, then it repeats two steps until convergence, first assignin
 updating the clusters (this is called the maximization step).
 
 A Gaussian mixture model is a generative model.
+> [!TIP]
+> Gaussian mixture models try to fit all the data, including the outliers, so if you have too
+many of them, this will bias the model’s view of “normality,” and some outliers may
+wrongly be considered as normal. If this happens, you can try to fit the model once, use
+it to detect and remove the most extreme outliers, then fit the model again on the
+cleaned-up dataset.
 
 
 
