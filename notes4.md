@@ -17,6 +17,9 @@ the training set has, the greater the risk of **overfitting** it.
 >
 > Kernel PCA
 
+> [!IMPORTANT]
+> PCA can give you a formidable speedup, and if you're lucky a performance boost... but it's really <ins> not guaranteed </ins> : it depends on the **model** and the **dataset**!
+
 ### Random Projection
 
 > Random Projection algorithm projects the data to
