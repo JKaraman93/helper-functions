@@ -58,6 +58,19 @@ tree: this approach allows it to use limited memory, while handling huge dataset
 This algorithm takes a similarity matrix between the instances and creates a low-dimensional embedding from it (i.e., it reduces the
 matrix’s dimensionality), then it uses another clustering algorithm in this low-dimensional space
 
+### Gaussian Mixture Model
+A Gaussian mixture model (GMM) is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian
+distributions whose parameters are unknown. All the instances generated from a single Gaussian distribution form a cluster that typically looks like
+an ellipsoid. Each cluster can have a different ellipsoidal shape, size, density, and orientation.
+
+Expectation-Maximization (EM) algorithm, which has many similarities with the K-Means algorithm: it also initializes the cluster
+parameters randomly, then it repeats two steps until convergence, first assigning instances to clusters (this is called the expectation step) and then
+updating the clusters (this is called the maximization step).
+
+A Gaussian mixture model is a generative model.
+
+
+
 ### Anomaly detection
 
 ### Density estimation
