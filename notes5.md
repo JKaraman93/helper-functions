@@ -1,6 +1,5 @@
-## Unsupervised Learning
+## Clustering 
 
-### Clustering
 **Dimensionality reduction:** Once a dataset has been clustered, it is usually possible to measure each instance’s affinity with each cluster: affinity is any measure of how well an instance fits into a cluster. Each instance’s feature vector x can then be replaced with the vector of its cluster affinities.
 
 **Feature Engineering**: The cluster affinities can often be useful as extra features.
