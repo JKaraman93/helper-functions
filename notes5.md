@@ -70,9 +70,12 @@ many of them, this will bias the model’s view of “normality,” and some out
 wrongly be considered as normal. If this happens, you can try to fit the model once, use
 it to detect and remove the most extreme outliers, then fit the model again on the
 cleaned-up dataset.
+> **BayesianGaussianMixture** class, which is capable of giving weights equal (or close) to zero to unnecessary clusters.
 
+> [!NOTE]
+> <ins> Dimensionality reduction  - inverse_transform() method  </ins>
+>
+> If you compare the reconstruction error of a normal instance with the
+reconstruction error of an anomaly, the latter will usually be much
+larger.
 
-
-### Anomaly detection
-
-### Density estimation
