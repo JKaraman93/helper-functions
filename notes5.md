@@ -47,7 +47,7 @@ sparse m × m matrix that indicates which pairs of instances are neighbors (e.g.
 sklearn.neighbors.kneighbors_graph()). Without a connectivity matrix, the algorithm **does not scale well to large datasets**
 
 ### BIRCH
-was designed specifically for very large datasets,and it can be faster than batch K-Means, without having to store all the instances in the
+was designed specifically for **very large datasets,** and it can be faster than batch K-Means, without having to store all the instances in the
 tree: this approach allows it to use limited memory, while handling huge datasets.
 
 ### Spectral clustering 
@@ -73,9 +73,7 @@ cleaned-up dataset.
 > **BayesianGaussianMixture** class, which is capable of giving weights equal (or close) to zero to unnecessary clusters.
 
 > [!NOTE]
-> <ins> Dimensionality reduction  - inverse_transform() method  </ins>
->
-> If you compare the reconstruction error of a normal instance with the
+> <ins> Dimensionality reduction  - inverse_transform() method  </ins> :  If you compare the reconstruction error of a normal instance with the
 reconstruction error of an anomaly, the latter will usually be much
 larger.
 
