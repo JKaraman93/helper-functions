@@ -20,3 +20,8 @@ $w_1x_1+w_2x_2+ .. +w_nx_n+b=0$
 |Multi-Class (C classes, Integer Labels)		| C		| Softmax		| Sparse Categorical Cross-Entropy | Integer class labels (e.g., 1, 2, 3)
 Multi-Label Classification (each sample can belong to multiple classes)	| C	| Sigmoid (applied independently to each neuron)| Binary Cross-Entropy| Binary vector for each sample (e.g., [1,0,1] for belonging to classes 0 and 2)
 | Ordinal Classification (Classes with an order, e.g., "bad" < "okay" < "good")	| 1	| Sigmoid (or Softmax with ordinal encoding)| Custom loss (e.g., Mean Squared Error or Ordinal Cross-Entropy)| Ordered integer labels (0,1,2,...)
+
+#### Regularization technique
+> [!TIP]
+> The **auxiliary output** acts as a separate learning signal, ensuring that even earlier layers contribute directly to predictions.\
+> This improves <ins>generalization</ins> by forcing different parts of the network to be useful independently
