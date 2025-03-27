@@ -11,3 +11,10 @@ Perceptrons may train a bit faster.
 >The **decision boundary** is defined where $y^=0$, which is the hyperplane:\
 $w_1x_1+w_2x_2+ .. +w_nx_n+b=0$
     
+#### Loss functions
+
+| Functions | Target Class | Activation |
+| -------- | ------- | ------- |
+| Cross-Entropy Loss | One-hot encoded labels (e.g., [0,1,0])| Softmax |
+| Sparse Cross-Entropy Loss	| Integer labels (e.g., 1 for "cat") | Softmax |
+
