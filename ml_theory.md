@@ -13,8 +13,10 @@ $w_1x_1+w_2x_2+ .. +w_nx_n+b=0$
     
 #### Loss functions
 
-| Functions | Target Class | Activation |
-| -------- | ------- | ------- |
-| Cross-Entropy Loss | One-hot encoded labels (e.g., [0,1,0])| Softmax |
-| Sparse Cross-Entropy Loss	| Integer labels (e.g., 1 for "cat") | Softmax |
-
+| Classification Type	| # of Output Neurons	| Activation Function	| Loss Function |	Target Labels Format
+| -------- | :-------: | ------- | ------- | ------- |
+| Binary Classification	| 1		| Sigmoid (σ(z))	| 	Binary Cross-Entropy 	| Binary (0 or 1)
+| Multi-Class (C classes, One-Hot Labels)		| C		| Softmax		| Categorical Cross-Entropy | One-hot encoded vectors (e.g., [0,1,0,0] for class 1)
+|Multi-Class (C classes, Integer Labels)		| C		| Softmax		| Sparse Categorical Cross-Entropy | Integer class labels (e.g., 1, 2, 3)
+Multi-Label Classification (each sample can belong to multiple classes)	| C	| Sigmoid (applied independently to each neuron)| Binary Cross-Entropy| Binary vector for each sample (e.g., [1,0,1] for belonging to classes 0 and 2)
+| Ordinal Classification (Classes with an order, e.g., "bad" < "okay" < "good")	| 1	| Sigmoid (or Softmax with ordinal encoding)| Custom loss (e.g., Mean Squared Error or Ordinal Cross-Entropy)| Ordered integer labels (0,1,2,...)
