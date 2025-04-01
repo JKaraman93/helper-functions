@@ -25,3 +25,33 @@ Multi-Label Classification (each sample can belong to multiple classes)	| C	| Si
 > [!TIP]
 > The **auxiliary output** acts as a separate learning signal, ensuring that even earlier layers contribute directly to predictions.\
 > This improves <ins>generalization</ins> by forcing different parts of the network to be useful independently
+
+#### Vanishing Gradients
+
+    Gradient values get smaller as they propagate backward through layers (especially in deep networks).
+    Lower (earlier) layers receive very small gradients → Their weights update very slowly
+    Many activation functions (like sigmoid or tanh) have small derivatives for extreme values.
+    
+✅ Use activation functions with better gradients:
+
+    ReLU (Rectified Linear Unit) instead of Sigmoid or Tanh.
+
+    Leaky ReLU, Parametric ReLU (PReLU) for better flow of gradients.
+
+✅ Batch Normalization:
+
+    Keeps activations well-scaled.
+
+    Prevents gradients from shrinking too much.
+
+✅ Use Residual Networks (ResNets):
+
+    Includes skip connections to pass information directly to later layers.
+
+    Helps gradients flow more easily.
+
+✅ Use Proper Weight Initialization:
+
+    Xavier/Glorot Initialization: Works well for Sigmoid/Tanh.
+
+    He Initialization: Works well for ReLU-based networks.
