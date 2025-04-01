@@ -161,6 +161,13 @@ inc_pca.fit(X_mmap)
 ```
 
 ### Neural Network Finetuning
+>[!NOTE]
+>Hyperband is smarter than pure random search in the way it allocates
+resources, but at its core it still explores the hyperparameter space
+randomly: it’s fast, but coarse. However, Keras Tuner also includes a
+**kt.BayesianOptimization** tuner: this algorithm gradually learns
+which regions of the hyperparameter space are most promising by fitting a
+probabilistic model called a Gaussian process.
 ```
 import keras_tuner as kt
 
