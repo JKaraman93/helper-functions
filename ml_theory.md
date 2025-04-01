@@ -26,7 +26,7 @@ Multi-Label Classification (each sample can belong to multiple classes)	| C	| Si
 > The **auxiliary output** acts as a separate learning signal, ensuring that even earlier layers contribute directly to predictions.\
 > This improves <ins>generalization</ins> by forcing different parts of the network to be useful independently
 
-#### Vanishing Gradients
+### Vanishing Gradients
 
     Gradient values get smaller as they propagate backward through layers (especially in deep networks).
     Lower (earlier) layers receive very small gradients → Their weights update very slowly
