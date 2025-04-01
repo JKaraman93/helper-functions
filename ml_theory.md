@@ -55,3 +55,6 @@ Multi-Label Classification (each sample can belong to multiple classes)	| C	| Si
     Xavier/Glorot Initialization: Works well for Sigmoid/Tanh.
 
     He Initialization: Works well for ReLU-based networks.
+
+>[!TIP]
+> When the values to predict can vary by many orders of magnitude, you may want to predict the **logarithm** of the target value rather than the target value directly (e.g Some houses cost $50,000, others $5,000,000, the scale difference is huge). Simply computing the **exponential** of the neural network's output will give you the estimated value (since exp(log v) = v).
