@@ -62,3 +62,11 @@ Multi-Label Classification (each sample can belong to multiple classes)	| C	| Si
 Normal distribution with mean 0 and variance 
 $\sigma^2 =\frac{1}{fan_{avg}}$ where $fan_{avg} = \frac{(fan_{in} +fan_{out})}{2}$ (the number of inputs and outputs of the layer)\
 or a uniform distribution between − r and + r, with $r=\sqrt{\frac{3}{fan_{avg}}}$
+
+### Batch Normalization
+>[!TIP]
+>Sometimes applying BN before the activation function works better (there's a debate on this topic). Moreover, the layer before a BatchNormalization layer does not need to have bias terms, since the BatchNormalization layer some as well, it would be a waste of parameters, so you can set use_bias=False when creating those layers:
+```
+tf.keras.layers.Dense(300, kernel_initializer="he_normal", use_bias=False),
+tf.keras.layers.BatchNormalization()
+```
