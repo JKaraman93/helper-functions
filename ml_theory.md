@@ -64,9 +64,18 @@ $\sigma^2 =\frac{1}{fan_{avg}}$ where $fan_{avg} = \frac{(fan_{in} +fan_{out})}{
 or a uniform distribution between − r and + r, with $r=\sqrt{\frac{3}{fan_{avg}}}$
 
 ### Batch Normalization
->[!TIP]
->Sometimes applying BN before the activation function works better (there's a debate on this topic). Moreover, the layer before a BatchNormalization layer does not need to have bias terms, since the BatchNormalization layer some as well, it would be a waste of parameters, so you can set use_bias=False when creating those layers:
+
+#### After each hidden layer (included input layer)
 ```
+tf.keras.layers.Flatten(input_shape=[28, 28]),
+tf.keras.layers.BatchNormalization(),
+tf.keras.layers.Dense(300, kernel_initializer="he_normal", activation="relu"),
+tf.keras.layers.BatchNormalization(),
+```
+#### Before each hidden layer (excluded Input layer)
+```
+tf.keras.layers.Flatten(input_shape=[28, 28]),
 tf.keras.layers.Dense(300, kernel_initializer="he_normal", use_bias=False),
-tf.keras.layers.BatchNormalization()
+tf.keras.layers.BatchNormalization(),
+tf.keras.layers.Activation("relu"),
 ```
