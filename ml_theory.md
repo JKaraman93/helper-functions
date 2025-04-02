@@ -53,8 +53,12 @@ Multi-Label Classification (each sample can belong to multiple classes)	| C	| Si
 ✅ Use Proper Weight Initialization:
 
     Xavier/Glorot Initialization: Works well for Sigmoid/Tanh.
-
     He Initialization: Works well for ReLU-based networks.
 
 >[!TIP]
 > When the values to predict can vary by many orders of magnitude, you may want to predict the **logarithm** of the target value rather than the target value directly (e.g Some houses cost $50,000, others $5,000,000, the scale difference is huge). Simply computing the **exponential** of the neural network's output will give you the estimated value (since exp(log v) = v).
+
+### Xavier/Glorot Initialization
+Normal distribution with mean 0 and variance 
+$\sigma^2 =\frac{1}{fan_{avg}}$ where $fan_{avg} = \frac{(fan_{in} +fan_{out})}{2}$ (the number of inputs and outputs of the layer)\
+or a uniform distribution between − r and + r, with $r=\sqrt{\frac{3}{fan_{avg}}}$
