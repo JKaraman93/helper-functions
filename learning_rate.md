@@ -22,3 +22,19 @@ Final |few epochs	LR drops much further (by orders of magnitude)	|Momentum remai
 
 - Momentum acts inversely:
     >Helps to smooth out large updates early and small ones later.
+
+### Performance scheduling 
+```
+lr_scheduler = tf.keras.callbacks.ReduceLROnPlateau(factor=0.5, patience=5)
+```
+
+### Power scheduling        $\ \eta(t) = \frac{\eta_0} {(1 + \frac{t}{s})^c}$
+```
+lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
+    initial_learning_rate=0.01,
+    decay_steps=10_000,
+    decay_rate=1.0,
+    staircase=False)
+```
+
+### Exponential Scheduling  $\ \eta(t) = \eta_0 0.1^\frac{t}{s}$
