@@ -38,3 +38,9 @@ lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
 ```
 
 ### Exponential Scheduling  $\ \eta(t) = \eta_0 0.1^\frac{t}{s}$
+```
+def exponential_decay(lr0, s):
+    def exponential_decay_fn(epoch):
+        return lr0 * 0.1 ** (epoch / s)
+    return exponential_decay_fn
+```
