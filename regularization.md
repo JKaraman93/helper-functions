@@ -14,3 +14,6 @@ class MCDropout(tf.keras.layers.Dropout):
 ```
 #### Max-Norm Regularization
 It constrains the weights w of the incoming connections such that $∥ w ∥_2 ≤ r$, where r is the max-norm hyperparameter and $∥ · ∥_2$ is the $ℓ_2$ norm and rescales w if needed $(w \leftarrow w \frac{r}{∥ w ∥_2})$.
+'''
+kernel_constraint=tf.keras.constraints.max_norm(1.)) # r = 1.
+'''
