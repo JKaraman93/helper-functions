@@ -14,6 +14,14 @@ class MCDropout(tf.keras.layers.Dropout):
 ```
 #### Max-Norm Regularization
 It constrains the weights w of the incoming connections such that $∥ w ∥_2 ≤ r$, where r is the max-norm hyperparameter and $∥ · ∥_2$ is the $ℓ_2$ norm and rescales w if needed $(w \leftarrow w \frac{r}{∥ w ∥_2})$.
-'''
+```
 kernel_constraint=tf.keras.constraints.max_norm(1.)) # r = 1.
-'''
+```
+> [!NOTE]
+> The max_norm() function has an **axis** argument that defaults to 0. A
+Dense layer usually has weights of shape [number of inputs, number of
+neurons], so using axis=0 means that the max-norm constraint will apply
+independently to each neuron’s weight vector. If you want to use max-norm
+with **convolutional layers** (see Chapter 14), make sure to set the
+max_norm() constraint’s axis argument appropriately (usually axis=
+[0, 1, 2]).
