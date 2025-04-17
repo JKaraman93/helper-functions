@@ -3,12 +3,15 @@
 $\mathbf{L_1}$ (Lasso)   
 $Loss_{total}​=Loss_{original}​+λ\sum|w_i|$
 
+If $w_i$​ is small, it can easily be shrunk to zero, because the **fixed-size** subtraction can outweigh its current value.  
 Encourages **sparse weights** → drives many weights exactly to **zero**.
 Good for **feature selection**.
 
 $\mathbf{L_2}$ (Ridge)   
-$Loss_{total}​=Loss_{original}​+λ\sum w_i^2$
+$Loss_{total}​=Loss_{original}​+λ\sum w_i^2$  
+$w_i​ \leftarrow w_i ​− \eta(\frac {\partial Loss}​ {\partial w_i} + \lambda sign(w_i​))$  
 
+The gradient is **proportional** to $wi$.  
 Encourages **smaller weights**, but not exactly zero.
 **All features** contribute a bit to prediction.
 
