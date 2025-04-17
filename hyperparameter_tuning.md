@@ -159,8 +159,31 @@
     Neural Architecture Search (NAS) – Automates deep learning tuning.
 
 ### Final Recommendations
+- Start simple (few layers, moderate neurons, Adam optimizer).
+- Tune one hyperparameter at a time.
+- Use callbacks (e.g., ReduceLROnPlateau, EarlyStopping).
+- onsider AutoML tools if available (e.g., KerasTuner, Optuna).
 
-🔹 Start simple (few layers, moderate neurons, Adam optimizer).
-🔹 Tune one hyperparameter at a time.
-🔹 Use callbacks (e.g., ReduceLROnPlateau, EarlyStopping).
-🔹 Consider AutoML tools if available (e.g., KerasTuner, Optuna).
+### A Good Configuration
+
+Hyperparameter | Default value 
+ --- | --- 
+|Kernel initializer | He initialization |
+Activation function | ReLU if shallow; Swish if deep
+Normalization | None if shallow; Batch Norm if deep
+Regularization | Early stopping; Weight decay if needed
+Optimizer | Nesterov Accelerated Gradients or AdamW
+Learning rate schedule | Performance scheduling or 1cycle
+
+<ins> In case of  simple stack of dense layers </ins>
+
+Hyperparameter | Default value
+ --- | --- 
+Kernel initializer |LeCun initialization
+Activation function | SELU
+Normalization | None (self-normalization)
+Regularization | Alpha dropout if needed
+Optimizer |Nesterov Accelerated Gradients
+Learning rate schedule | Performance scheduling or 1cycle
+
+
