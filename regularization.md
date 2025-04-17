@@ -1,3 +1,17 @@
+### $L_1 and L_2$ 
+
+$\mathbf{L_1}$ (Lasso)   
+$Loss_{total}​=Loss_{original}​+λ\sum|w_i|$
+
+Encourages **sparse weights** → drives many weights exactly to **zero**.
+Good for **feature selection**.
+
+$\mathbf{L_2}$ (Ridge)   
+$Loss_{total}​=Loss_{original}​+λ\sum w_i^2$
+
+Encourages **smaller weights**, but not exactly zero.
+**All features** contribute a bit to prediction.
+
 ## Dropout
 > [!TIP]
 > It can also help to increase the dropout rate for large layers, and reduce it for small ones. It can also help to increase the dropout rate for its inputs.
