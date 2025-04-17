@@ -1,15 +1,18 @@
-### $L_1 and L_2$ 
 
-$\mathbf{L_1}$ (Lasso)   
+## $\mathbf{L_1}$ (Lasso)  
+
 $Loss_{total}​=Loss_{original}​+λ\sum|w_i|$
+
+$w_i​ \leftarrow w_i ​− \eta(\frac {\partial Loss}{\partial w_i} + 2\lambda w_i)​$  
 
 If $w_i$​ is small, it can easily be shrunk to zero, because the **fixed-size** subtraction can outweigh its current value.  
 Encourages **sparse weights** → drives many weights exactly to **zero**.
 Good for **feature selection**.
 
-$\mathbf{L_2}$ (Ridge)   
+## $\mathbf{L_2}$ (Ridge)   
 $Loss_{total}​=Loss_{original}​+λ\sum w_i^2$  
-$w_i​ \leftarrow w_i ​− \eta(\frac {\partial Loss}​ {\partial w_i} + \lambda sign(w_i​))$  
+
+$w_i​ \leftarrow w_i ​− \eta(\frac {\partial Loss}{\partial w_i} + \lambda sign(w_i))​$  
 
 The gradient is **proportional** to $wi$.  
 Encourages **smaller weights**, but not exactly zero.
@@ -29,7 +32,7 @@ class MCDropout(tf.keras.layers.Dropout):
   def call(self, inputs, training=None):
     return super().call(inputs, training=True)
 ```
-#### Max-Norm Regularization
+## Max-Norm Regularization
 It constrains the weights w of the incoming connections such that $∥ w ∥_2 ≤ r$, where r is the max-norm hyperparameter and $∥ · ∥_2$ is the $ℓ_2$ norm and rescales w if needed $(w \leftarrow w \frac{r}{∥ w ∥_2})$.
 ```
 kernel_constraint=tf.keras.constraints.max_norm(1.)) # r = 1.
