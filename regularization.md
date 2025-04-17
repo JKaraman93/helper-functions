@@ -6,3 +6,9 @@
 
 ### Mc Dropout 
 Using Monte Carlo Dropout, we perform multiple stochastic forward passes (e.g., 100) over the test set with **dropout enabled at inference time**. We then average the predictions to estimate the final output. These predictions are not the same each time due to the randomness introduced by dropout.
+
+```
+class MCDropout(tf.keras.layers.Dropout):
+  def call(self, inputs, training=None):
+    return super().call(inputs, training=True)
+```
