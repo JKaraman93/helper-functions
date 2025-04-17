@@ -1,4 +1,9 @@
 
+## Rationale
+Large weights usually mean the model is very **sensitive to input changes** — this leads to overfitting.
+
+By penalizing large weights, we encourage the model to find simpler, smoother solutions that generalize better to new data.
+
 ## $\mathbf{L_1}$ (Lasso)  
 
 $Loss_{total}​=Loss_{original}​+λ\sum|w_i|$
