@@ -1,6 +1,3 @@
-> [! TIP]
-> . It can also help to increase the dropout rate for large layers, and reduce it for small ones. It can also help to increase the dropout rate for its inputs.
-
 ### 1Cycle 
 
 Phase |	Learning Rate (LR)	| Momentum 
