@@ -1,6 +1,6 @@
 ## Summary
 
-**Relu** is usually a good default for the hidden layers, as it is fast and yields good results. Its ability to output precisely zero can also be useful in some cases (e.g., see Chapter 17). Moreover, it can sometimes benefit from optimized implementations as well as from hardware acceleration.   
+**Relu** is usually a good default for the hidden layers, as it is fast and yields good results.
 
 The **leaky ReLU** variants of ReLU can **improve** the model's quality without hindering its speed too much compared to ReLU.  
 
